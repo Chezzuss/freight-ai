@@ -428,8 +428,10 @@ a { color: var(--cyan); }
   content: "";
   position: absolute;
   top: 24px;
-  left: 12.5%;
-  right: 12.5%;
+  /* Endpoints match the centers of the first/last step numbers:
+     left = 48px box / 2; right = W/4 - 45px (4 equal columns, 3*28px gaps). */
+  left: 24px;
+  right: calc(25% - 45px);
   height: 1px;
   background: linear-gradient(90deg, rgba(34, 211, 238, 0.45), rgba(99, 102, 241, 0.45));
 }
@@ -685,13 +687,16 @@ a { color: var(--cyan); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
 
   .steps { grid-template-columns: 1fr; gap: 8px; }
-  .steps::before {
-    top: 24px;
-    bottom: 24px;
-    left: 23px;
-    right: auto;
+  /* Stacked steps can't use one absolute line (it would dangle past the last
+     number), so each step draws its own segment down to the next number. */
+  .steps::before { display: none; }
+  .step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    top: 48px;
+    bottom: -8px;
     width: 1px;
-    height: auto;
     background: linear-gradient(180deg, rgba(34, 211, 238, 0.45), rgba(99, 102, 241, 0.45));
   }
   .step { display: grid;
