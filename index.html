@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>freight.ai — Pre-Release Rate Platform for US Freight Brokers</title>
+  <meta name="description" content="Pre-release early access for US freight brokers: instant rate quotes from your own rate cards, AI email parsing with human approval, source on every number.">
+  <meta property="og:title" content="freight.ai — Pre-Release Rate Platform for US Freight Brokers">
+  <meta property="og:description" content="Pre-release early access for US freight brokers: instant rate quotes from your own rate cards, AI email parsing with human approval, source on every number.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#top" aria-label="freight.ai — back to top">
+      <svg class="mark" viewBox="0 0 64 64" width="26" height="26" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="gh" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#6366f1"/>
+          </linearGradient>
+        </defs>
+        <rect x="1.5" y="1.5" width="61" height="61" rx="13.5" fill="#0d1526" stroke="url(#gh)" stroke-width="3"/>
+        <path d="M13 25.5h29.5l7 6.5-7 6.5H13z" fill="none" stroke="url(#gh)" stroke-width="3.2" stroke-linejoin="round"/>
+        <path d="M21.5 32h16m0 0-4.6-4.6M37.5 32l-4.6 4.6" fill="none" stroke="#e6edf7" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      freight.ai
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#how-it-works">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#trust">Trust</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm header-cta" href="mailto:f12345678q1@gmail.com?subject=Freight%20AI%20early%20access">Request early access</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="container hero-inner">
+      <p class="badge reveal"><span class="badge-dot" aria-hidden="true"></span>Pre-release · Early access open</p>
+      <h1 id="hero-title" class="reveal reveal-delay-1">Freight rates in <span class="grad">seconds</span>, <span class="grad">provenance</span> attached</h1>
+      <p class="hero-subtitle reveal reveal-delay-2">freight.ai quotes ocean, air and truck lanes in seconds from your own rate cards and lane history — every number labeled with its source, freshness and validity window. This is a pre-release product: AI parses your carrier email and spreadsheets and prepares quotes and drafts, while a human approves every decision.</p>
+      <div class="cta-row reveal reveal-delay-3">
+        <a class="btn btn-primary btn-lg" href="mailto:f12345678q1@gmail.com?subject=Freight%20AI%20early%20access">Request early access</a>
+        <a class="btn btn-ghost btn-lg" href="#how-it-works">See how it works</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Engineering facts from recorded runs">
+    <div class="container stats-grid">
+      <div class="stat reveal">
+        <p class="stat-value">1,058</p>
+        <p class="stat-label">backend tests passing in our latest recorded full run</p>
+        <p class="stat-note">An engineering fact from a recorded quality-gate run, not a market result. One external live-API test failed on provider rate limits (a Mistral quota test, not a product regression) and one was skipped.</p>
+      </div>
+      <div class="stat reveal reveal-delay-1">
+        <p class="stat-value">165</p>
+        <p class="stat-label">frontend tests across 33 files, plus a zero-error TypeScript build</p>
+        <p class="stat-note">The second standing pre-release gate: vitest and tsc, both green in the same recorded run.</p>
+      </div>
+      <div class="stat reveal reveal-delay-2">
+        <p class="stat-value">398</p>
+        <p class="stat-label">API endpoints across 67 router modules</p>
+        <p class="stat-note">Surface area of the built backend — 395 of them in the versioned API layer. An inventory fact, not a feature promise.</p>
+      </div>
+      <div class="stat reveal reveal-delay-3">
+        <p class="stat-value">120 days</p>
+        <p class="stat-label">maximum age of lane history used in a quote</p>
+        <p class="stat-note">Stale history is skipped rather than shown as a live rate — enforced in the lookup query itself.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="value-title">
+    <div class="container">
+      <p class="eyebrow reveal">Why freight.ai</p>
+      <h2 id="value-title" class="section-title reveal">Four reasons brokers talk to us first</h2>
+      <div class="value-grid">
+        <article class="v-card reveal">
+          <span class="v-emoji" aria-hidden="true">⚡</span>
+          <h3>Seconds, not hours</h3>
+          <p>Stop re-typing rates from carrier emails. The engine resolves a lane price instantly from your tenant rate cards, your freshest lane history and shipped-in defaults — deterministically, so the same lane and card always yield the same number.</p>
+        </article>
+        <article class="v-card reveal reveal-delay-1">
+          <span class="v-emoji" aria-hidden="true">🤝</span>
+          <h3>AI prepares. You approve.</h3>
+          <p>LLM mapping flags low-confidence fields, inbound email becomes structured rows, and quotes and replies start as drafts. Outbound email defaults to preview-only — nothing sends without a human.</p>
+        </article>
+        <article class="v-card reveal reveal-delay-2">
+          <span class="v-emoji" aria-hidden="true">🔎</span>
+          <h3>Provenance on every number</h3>
+          <p>Each rate is labeled tenant_rate_card, lane_history or defaults, with its validity window. The assistant cites the exact email chunks it used and marks engine-resolved figures with an [R] chip.</p>
+        </article>
+        <article class="v-card reveal reveal-delay-3">
+          <span class="v-emoji" aria-hidden="true">🚛</span>
+          <h3>Built for US freight brokerage</h3>
+          <p>Truck data validated against all 50 states plus DC, ocean and air lanes keyed by UN/LOCODE, per-container / per-kg / per-ton rate bases, and strict multi-tenant isolation.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="how-it-works" aria-labelledby="how-title">
+    <div class="container">
+      <p class="eyebrow reveal">Pipeline</p>
+      <h2 id="how-title" class="section-title reveal">How it works</h2>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num" aria-hidden="true">01</span>
+          <h3>Ingest</h3>
+          <p>Drop carrier spreadsheets — CSV, TSV, XLSX or XLS — or connect your inbox. Header detection survives shuffled columns, junk preamble rows and messy encodings, and every import returns a row-quality report: dirty-row reasons, invalid-state share, date assumptions.</p>
+        </li>
+        <li class="step reveal reveal-delay-1">
+          <span class="step-num" aria-hidden="true">02</span>
+          <h3>Extract &amp; verify</h3>
+          <p>An LLM maps your columns to canonical freight fields with a confidence score per field, falling back to deterministic heuristics when the LLM is unavailable. Ambiguous day/month dates and invalid US states are flagged — never silently accepted.</p>
+        </li>
+        <li class="step reveal reveal-delay-2">
+          <span class="step-num" aria-hidden="true">03</span>
+          <h3>Calculate</h3>
+          <p>A deterministic cascade resolves the rate per lane: your tenant rate cards first, then lane history inside the 120-day freshness window, then shipped-in defaults. Ocean, air and truck with per-tenant mode gating — and a source label on every hit.</p>
+        </li>
+        <li class="step reveal reveal-delay-3">
+          <span class="step-num" aria-hidden="true">04</span>
+          <h3>Human-approved quote</h3>
+          <p>The calculation persists as a draft; one click promotes it into a real quote in your CRM list with a normalized breakdown. Before anything leaves the building, outbound messages open in preview for review.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <p class="eyebrow reveal">Features</p>
+      <h2 id="features-title" class="section-title reveal">What's already built</h2>
+      <p class="section-subtitle reveal">An engineering inventory, not a roadmap mockup — every item below exists in the codebase today.</p>
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <h3>GigaParser ingest with quality observability</h3>
+          <p>Four tabular formats with per-format diagnostics, dirty-row reasons, invalid-state and date-assumption markers — verified end-to-end on a real 221-row customer file (211 valid rows).</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-1">
+          <h3>Ocean, air &amp; truck quote calculator</h3>
+          <p>Per-tenant mode gating before computing, blending lane data, history aggregates and carrier risk. Quotes can originate in the calculator, from email, or by promoting a draft.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-2">
+          <h3>Quote drafts → CRM, in one click</h3>
+          <p>Pricing sessions persist as drafts; one click promotes a draft into a real quote — mode-mapped, breakdown normalized — closing the loop from calculation to sales document.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-3">
+          <h3>Cited assistant over your inbox</h3>
+          <p>Inbound email is auto-indexed per tenant; answers carry citation chips and an honest RAG status instead of pretending grounding happened.</p>
+        </article>
+        <article class="feature-card reveal">
+          <h3>Rate answers the LLM didn't invent</h3>
+          <p>The assistant extracts the lane, runs the deterministic rate cascade and quotes the engine's figure with an [R] provenance marker — the model never generates the number.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-1">
+          <h3>CRM with follow-ups &amp; pipeline</h3>
+          <p>Deal timelines with notes, calls, open tasks and follow-ups, rendered as a drag-and-drop kanban with a pipeline summary.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-2">
+          <h3>AR/AP billing</h3>
+          <p>Invoices with line items and payment records, age-bucketed receivables, plus vendor bills on the payables side.</p>
+        </article>
+        <article class="feature-card reveal reveal-delay-3">
+          <h3>Carrier risk &amp; toll estimation</h3>
+          <p>Risk scores computed from real shipment history — failure probability, volatility, per-carrier metrics — plus truck tolls via TollGuru with configurable vehicle profiles.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="trust" aria-labelledby="trust-title">
+    <div class="container">
+      <p class="eyebrow reveal">Trust</p>
+      <h2 id="trust-title" class="section-title reveal">Trust we can prove — and limits we state</h2>
+      <p class="section-subtitle reveal">Numbers never appear without a source, failures never masquerade as answers — and the boundaries of the claim are part of the claim.</p>
+      <div class="trust-grid">
+        <article class="trust-card reveal">
+          <h3>A source and a freshness check on every rate</h3>
+          <p>Each resolution is labeled tenant_rate_card, lane_history or defaults, with its rate-record ID and valid_from/valid_to window; cards outside their validity window are rejected at lookup time. Lane history older than 120 days is skipped rather than presented as a live rate — the cutoff lives in the query itself, and hits return last-rate dates and sample counts.</p>
+        </article>
+        <article class="trust-card reveal reveal-delay-1">
+          <h3>The assistant cites, never invents</h3>
+          <p>Answers carry citation chips pointing at the exact email chunks used; rate figures come from the deterministic engine with an [R] marker, and the UI shows the real reason when retrieval wasn't used — instead of pretending grounding happened.</p>
+        </article>
+        <article class="trust-card reveal reveal-delay-2">
+          <h3>Degraded states are explicit</h3>
+          <p>no_rate_found, unsupported_mode, extraction_unavailable — failures return honest machine-readable reasons and a visible demo-fallback chip, never a silent substitution. The chat degrades; it never fabricates.</p>
+        </article>
+        <article class="trust-card reveal reveal-delay-3">
+          <h3>A human in the loop, by default</h3>
+          <p>Outbound email defaults to preview-only with a dedicated reply-review page; LLM-repaired rows are marked needs_review; field mappings below 0.60 confidence wait for your confirmation.</p>
+        </article>
+        <article class="trust-card reveal">
+          <h3>Tenant isolation &amp; an audit trail</h3>
+          <p>Every query is tenant-scoped — your brokerage sees only its own data. Six roles gate access, and significant actions land in a tenant-scoped audit log with actor, request context and outcome, browsable in the admin UI.</p>
+        </article>
+        <article class="trust-card reveal reveal-delay-1">
+          <h3>Known limits, stated up front</h3>
+          <p>No live market-rate feed exists or is promised. PDF attachments aren't ingested yet. Email sync is implemented and unit-tested but demo-grade until configured in production. And "provable trust" today covers the rate-lookup and assistant surfaces — raising the legacy quote circuit to the same standard is tracked in our own code review and closed before release.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="container narrow">
+      <p class="eyebrow reveal">Questions</p>
+      <h2 id="faq-title" class="section-title reveal">FAQ</h2>
+      <div class="faq">
+        <details class="reveal">
+          <summary>When does freight.ai launch?</summary>
+          <p class="faq-a">We're pre-release and won't publish a date we can't stand behind. The core is built today — the rate engine with provenance, the ingest pipeline, the cited assistant, CRM and billing — gated by 1,058 passing backend tests in the latest recorded run. What's left before general release is written down in our own code review: raising the legacy quote circuit to the provenance standard, per-tenant mailboxes, PDF ingest. Early-access partners see that list and help set the order.</p>
+        </details>
+        <details class="reveal">
+          <summary>How much will it cost?</summary>
+          <p class="faq-a">Pricing isn't finalized, so we won't quote numbers yet. Pre-order partners get individual founding terms agreed directly with the founder — before public pricing exists.</p>
+        </details>
+        <details class="reveal">
+          <summary>Where do the rates come from?</summary>
+          <p class="faq-a">Only from your data: your tenant rate cards, your lane history (up to 120 days old) and shipped-in defaults. There is no live market or spot-index feed — that slot isn't built, and we don't claim it. If there's no data for a lane, you get an honest "no rate found", not a guess.</p>
+        </details>
+        <details class="reveal">
+          <summary>Does the AI act on its own?</summary>
+          <p class="faq-a">No. It parses, drafts and recommends. Outbound emails default to preview-only, LLM-repaired rows are flagged needs_review, and field mappings below 0.60 confidence wait for your explicit confirmation. AI prepares decisions; your team makes them.</p>
+        </details>
+        <details class="reveal">
+          <summary>What can I import today?</summary>
+          <p class="faq-a">CSV, TSV, XLSX and XLS spreadsheets, plus email ingest via Gmail OAuth. PDF attachments aren't supported yet — it's on the known-limits list above, not buried in a footnote.</p>
+        </details>
+        <details class="reveal">
+          <summary>How is my data protected?</summary>
+          <p class="faq-a">Every query is tenant-scoped — your brokerage sees only its own data. Access is gated by six roles (owner, admin, sales, ops, finance, platform super-admin), and significant actions land in a tenant-scoped audit log with actor and request context. PII redaction in logging is live; masking before external LLM calls currently covers column mapping and is being extended — we'd rather tell you where we stand than gloss over it.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pre-order" id="contact" aria-labelledby="preorder-title">
+    <div class="container narrow">
+      <p class="eyebrow reveal">Pre-order</p>
+      <h2 id="preorder-title" class="section-title reveal">Early access is open — on honest terms</h2>
+      <p class="lead reveal reveal-delay-1">freight.ai is pre-release. Early-access partners work with the rate engine, ingest pipeline, cited assistant, CRM and billing as they exist today, get a direct line to the founder while the remaining gaps are closed, and lock in individual pre-order terms before public pricing exists. Pricing isn't finalized — terms are agreed case by case. Contact Myshchyshyn Arseniy at f12345678q1@gmail.com.</p>
+      <div class="cta-row center reveal reveal-delay-2">
+        <a class="btn btn-primary btn-xl" href="mailto:f12345678q1@gmail.com?subject=Freight%20AI%20early%20access">Request early access</a>
+      </div>
+      <h3 class="contact-line reveal reveal-delay-3">Pre-orders &amp; early access — Myshchyshyn Arseniy · <a href="mailto:f12345678q1@gmail.com">f12345678q1@gmail.com</a></h3>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <a class="logo" href="#top" aria-label="freight.ai — back to top">
+        <svg class="mark" viewBox="0 0 64 64" width="22" height="22" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="gf" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#6366f1"/>
+            </linearGradient>
+          </defs>
+          <rect x="1.5" y="1.5" width="61" height="61" rx="13.5" fill="#0d1526" stroke="url(#gf)" stroke-width="3"/>
+          <path d="M13 25.5h29.5l7 6.5-7 6.5H13z" fill="none" stroke="url(#gf)" stroke-width="3.2" stroke-linejoin="round"/>
+          <path d="M21.5 32h16m0 0-4.6-4.6M37.5 32l-4.6 4.6" fill="none" stroke="#e6edf7" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        freight.ai
+      </a>
+      <a class="btn btn-ghost btn-sm" href="mailto:f12345678q1@gmail.com?subject=Freight%20AI%20early%20access">Request early access</a>
+    </div>
+    <p class="footer-note">freight.ai is a pre-release product. Every number on this page is an engineering fact from the codebase or a recorded test run — none are market results. No customer logos, testimonials or case studies appear, because none exist yet. Pre-orders: Myshchyshyn Arseniy · <a href="mailto:f12345678q1@gmail.com">f12345678q1@gmail.com</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
