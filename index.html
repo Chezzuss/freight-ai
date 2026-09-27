@@ -57,27 +57,27 @@
     </div>
   </section>
 
-  <section class="stats" aria-label="Engineering facts from recorded runs">
+  <section class="stats" aria-label="What you get">
     <div class="container stats-grid">
       <div class="stat reveal">
-        <p class="stat-value">1,058</p>
-        <p class="stat-label">backend tests passing in our latest recorded full run</p>
-        <p class="stat-note">An engineering fact from a recorded quality-gate run, not a market result. One external live-API test failed on provider rate limits (a Mistral quota test, not a product regression) and one was skipped.</p>
+        <p class="stat-value">0.5s</p>
+        <p class="stat-label">end to end, from quote request to a priced lane — rate card, lane history, defaults and a carrier shortlist in one response</p>
+        <p class="stat-note">Measured, not aspirational: a live tenant ocean lookup (Shanghai → New York) returns the $2,350 card rate in ~0.2 ms. The engine is deterministic — no AI in the arithmetic, the same lane always yields the same number.</p>
       </div>
       <div class="stat reveal reveal-delay-1">
-        <p class="stat-value">165</p>
-        <p class="stat-label">frontend tests across 33 files, plus a zero-error TypeScript build</p>
-        <p class="stat-note">The second standing pre-release gate: vitest and tsc, both green in the same recorded run.</p>
+        <p class="stat-value">Top 10</p>
+        <p class="stat-label">risk-scored carrier recommendations on every truck quote</p>
+        <p class="stat-note">The calculator ranks carriers on your lane history and attaches each one's live risk score — failure probability, volatility, per-carrier metrics — so you pick from a shortlist, not a spreadsheet.</p>
       </div>
       <div class="stat reveal reveal-delay-2">
-        <p class="stat-value">398</p>
-        <p class="stat-label">API endpoints across 67 router modules</p>
-        <p class="stat-note">Surface area of the built backend — 395 of them in the versioned API layer. An inventory fact, not a feature promise.</p>
+        <p class="stat-value">51</p>
+        <p class="stat-label">US jurisdictions validated for truck lanes — all 50 states plus DC</p>
+        <p class="stat-note">Every import checks state codes against the full jurisdiction list; invalid states are flagged in the row-quality report, never silently accepted.</p>
       </div>
       <div class="stat reveal reveal-delay-3">
         <p class="stat-value">120 days</p>
-        <p class="stat-label">maximum age of lane history used in a quote</p>
-        <p class="stat-note">Stale history is skipped rather than shown as a live rate — enforced in the lookup query itself.</p>
+        <p class="stat-label">hard freshness cap — lane history older than this is never quoted</p>
+        <p class="stat-note">The cutoff lives in the lookup query itself: stale rates are skipped, not labeled. No silent stale numbers in a quote you send a customer.</p>
       </div>
     </div>
   </section>
@@ -175,8 +175,8 @@
           <p>Invoices with line items and payment records, age-bucketed receivables, plus vendor bills on the payables side.</p>
         </article>
         <article class="feature-card reveal reveal-delay-3">
-          <h3>Carrier risk &amp; toll estimation</h3>
-          <p>Risk scores computed from real shipment history — failure probability, volatility, per-carrier metrics — plus truck tolls via TollGuru with configurable vehicle profiles.</p>
+          <h3>Carrier recommendations &amp; toll estimation</h3>
+          <p>Truck quotes ship a ranked carrier shortlist — your lane history blended with each carrier's live risk score (failure probability, volatility, per-carrier metrics) — plus tolls via TollGuru with configurable vehicle profiles.</p>
         </article>
       </div>
     </div>
